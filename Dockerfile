@@ -18,3 +18,4 @@ RUN cd /zephyr && west update
 
 ADD build.sh /
 ENTRYPOINT ["/bin/bash", "/build.sh"]
+RUN chmod 755 /build.sh
