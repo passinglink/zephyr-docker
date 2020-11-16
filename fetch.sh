@@ -17,11 +17,6 @@ while getopts ":b:p:" opt; do
   esac
 done
 
-if [ -z "$BOARD" ]; then
-  echo "No board specified, use \$BOARD or -b"
-  exit 1
-fi
-
 if [ -z "$PROJECT_NAME" ]; then
   echo "No project name specified, use \$PROJECT_NAME or -p"
   exit 1
@@ -34,4 +29,3 @@ cp -rf "`pwd`" "/zephyr/$PROJECT_NAME"
 cd "/zephyr/$PROJECT_NAME"
 west init -l
 west update
-west build -b $BOARD
